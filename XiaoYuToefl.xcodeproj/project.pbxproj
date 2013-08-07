@@ -1,0 +1,485 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BE18F78A17B277850033EC1F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE18F78917B277840033EC1F /* UIKit.framework */; };
+		BE18F78C17B277850033EC1F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE18F78B17B277850033EC1F /* Foundation.framework */; };
+		BE18F78E17B277850033EC1F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE18F78D17B277850033EC1F /* CoreGraphics.framework */; };
+		BE18F79417B277850033EC1F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BE18F79217B277850033EC1F /* InfoPlist.strings */; };
+		BE18F79617B277850033EC1F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BE18F79517B277850033EC1F /* main.m */; };
+		BE18F79A17B277850033EC1F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BE18F79917B277850033EC1F /* AppDelegate.m */; };
+		BE18F79C17B277850033EC1F /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = BE18F79B17B277850033EC1F /* Default.png */; };
+		BE18F79E17B277850033EC1F /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BE18F79D17B277850033EC1F /* Default@2x.png */; };
+		BE18F7A017B277850033EC1F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BE18F79F17B277850033EC1F /* Default-568h@2x.png */; };
+		BE18F7A317B277850033EC1F /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE18F7A117B277850033EC1F /* MainStoryboard_iPhone.storyboard */; };
+		BE18F7A617B277850033EC1F /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE18F7A417B277850033EC1F /* MainStoryboard_iPad.storyboard */; };
+		BE18F7A917B277850033EC1F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE18F7A817B277850033EC1F /* ViewController.m */; };
+		BE18F7B117B278470033EC1F /* Comic_Andy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BE18F7B017B278470033EC1F /* Comic_Andy.ttf */; };
+		BE18F7B517B2788E0033EC1F /* particle.png in Resources */ = {isa = PBXBuildFile; fileRef = BE18F7B417B2788E0033EC1F /* particle.png */; };
+		BE18F7BA17B278D50033EC1F /* ding.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BE18F7B717B278D50033EC1F /* ding.mp3 */; };
+		BE18F7BB17B278D50033EC1F /* win.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BE18F7B817B278D50033EC1F /* win.mp3 */; };
+		BE18F7BC17B278D50033EC1F /* wrong.m4a in Resources */ = {isa = PBXBuildFile; fileRef = BE18F7B917B278D50033EC1F /* wrong.m4a */; };
+		BE18F7C617B279030033EC1F /* board.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BE18F7BE17B279030033EC1F /* board.jpg */; };
+		BE18F7C717B279030033EC1F /* board@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BE18F7BF17B279030033EC1F /* board@2x.jpg */; };
+		BE18F7C817B279030033EC1F /* btn.png in Resources */ = {isa = PBXBuildFile; fileRef = BE18F7C017B279030033EC1F /* btn.png */; };
+		BE18F7C917B279030033EC1F /* btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BE18F7C117B279030033EC1F /* btn@2x.png */; };
+		BE18F7CA17B279030033EC1F /* slot.png in Resources */ = {isa = PBXBuildFile; fileRef = BE18F7C217B279030033EC1F /* slot.png */; };
+		BE18F7CB17B279030033EC1F /* slot@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BE18F7C317B279030033EC1F /* slot@2x.png */; };
+		BE18F7CC17B279030033EC1F /* tile.png in Resources */ = {isa = PBXBuildFile; fileRef = BE18F7C417B279030033EC1F /* tile.png */; };
+		BE18F7CD17B279030033EC1F /* tile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BE18F7C517B279030033EC1F /* tile@2x.png */; };
+		BE18F7D517B27BF10033EC1F /* Word.m in Sources */ = {isa = PBXBuildFile; fileRef = BE18F7D417B27BF10033EC1F /* Word.m */; };
+		BE18F7D817B27CB30033EC1F /* GameController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE18F7D717B27CB30033EC1F /* GameController.m */; };
+		BE18F7DA17B27D800033EC1F /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BE18F7D917B27D800033EC1F /* libsqlite3.dylib */; };
+		BE18F7DC17B27DC60033EC1F /* dict_20130807.db in Resources */ = {isa = PBXBuildFile; fileRef = BE18F7DB17B27DC60033EC1F /* dict_20130807.db */; };
+		BE18F7E217B280B80033EC1F /* TargetView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE18F7DF17B280B80033EC1F /* TargetView.m */; };
+		BE18F7E317B280B80033EC1F /* TileView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE18F7E117B280B80033EC1F /* TileView.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		BE18F78617B277840033EC1F /* XiaoYuToefl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XiaoYuToefl.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE18F78917B277840033EC1F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		BE18F78B17B277850033EC1F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		BE18F78D17B277850033EC1F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		BE18F79117B277850033EC1F /* XiaoYuToefl-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "XiaoYuToefl-Info.plist"; sourceTree = "<group>"; };
+		BE18F79317B277850033EC1F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		BE18F79517B277850033EC1F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BE18F79717B277850033EC1F /* XiaoYuToefl-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XiaoYuToefl-Prefix.pch"; sourceTree = "<group>"; };
+		BE18F79817B277850033EC1F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		BE18F79917B277850033EC1F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		BE18F79B17B277850033EC1F /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		BE18F79D17B277850033EC1F /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		BE18F79F17B277850033EC1F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		BE18F7A217B277850033EC1F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		BE18F7A517B277850033EC1F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		BE18F7A717B277850033EC1F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		BE18F7A817B277850033EC1F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		BE18F7B017B278470033EC1F /* Comic_Andy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Comic_Andy.ttf; sourceTree = "<group>"; };
+		BE18F7B417B2788E0033EC1F /* particle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = particle.png; sourceTree = "<group>"; };
+		BE18F7B717B278D50033EC1F /* ding.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ding.mp3; sourceTree = "<group>"; };
+		BE18F7B817B278D50033EC1F /* win.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = win.mp3; sourceTree = "<group>"; };
+		BE18F7B917B278D50033EC1F /* wrong.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = wrong.m4a; sourceTree = "<group>"; };
+		BE18F7BE17B279030033EC1F /* board.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = board.jpg; sourceTree = "<group>"; };
+		BE18F7BF17B279030033EC1F /* board@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "board@2x.jpg"; sourceTree = "<group>"; };
+		BE18F7C017B279030033EC1F /* btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn.png; sourceTree = "<group>"; };
+		BE18F7C117B279030033EC1F /* btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn@2x.png"; sourceTree = "<group>"; };
+		BE18F7C217B279030033EC1F /* slot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slot.png; sourceTree = "<group>"; };
+		BE18F7C317B279030033EC1F /* slot@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slot@2x.png"; sourceTree = "<group>"; };
+		BE18F7C417B279030033EC1F /* tile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tile.png; sourceTree = "<group>"; };
+		BE18F7C517B279030033EC1F /* tile@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tile@2x.png"; sourceTree = "<group>"; };
+		BE18F7D217B2799B0033EC1F /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
+		BE18F7D317B27BF10033EC1F /* Word.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Word.h; sourceTree = "<group>"; };
+		BE18F7D417B27BF10033EC1F /* Word.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Word.m; sourceTree = "<group>"; };
+		BE18F7D617B27CB30033EC1F /* GameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameController.h; sourceTree = "<group>"; };
+		BE18F7D717B27CB30033EC1F /* GameController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameController.m; sourceTree = "<group>"; };
+		BE18F7D917B27D800033EC1F /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		BE18F7DB17B27DC60033EC1F /* dict_20130807.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = dict_20130807.db; sourceTree = "<group>"; };
+		BE18F7DE17B280B80033EC1F /* TargetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TargetView.h; sourceTree = "<group>"; };
+		BE18F7DF17B280B80033EC1F /* TargetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TargetView.m; sourceTree = "<group>"; };
+		BE18F7E017B280B80033EC1F /* TileView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TileView.h; sourceTree = "<group>"; };
+		BE18F7E117B280B80033EC1F /* TileView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TileView.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BE18F78317B277840033EC1F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE18F7DA17B27D800033EC1F /* libsqlite3.dylib in Frameworks */,
+				BE18F78A17B277850033EC1F /* UIKit.framework in Frameworks */,
+				BE18F78C17B277850033EC1F /* Foundation.framework in Frameworks */,
+				BE18F78E17B277850033EC1F /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BE18F77D17B277840033EC1F = {
+			isa = PBXGroup;
+			children = (
+				BE18F78F17B277850033EC1F /* XiaoYuToefl */,
+				BE18F78817B277840033EC1F /* Frameworks */,
+				BE18F78717B277840033EC1F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BE18F78717B277840033EC1F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BE18F78617B277840033EC1F /* XiaoYuToefl.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BE18F78817B277840033EC1F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BE18F7D917B27D800033EC1F /* libsqlite3.dylib */,
+				BE18F78917B277840033EC1F /* UIKit.framework */,
+				BE18F78B17B277850033EC1F /* Foundation.framework */,
+				BE18F78D17B277850033EC1F /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BE18F78F17B277850033EC1F /* XiaoYuToefl */ = {
+			isa = PBXGroup;
+			children = (
+				BE18F7D217B2799B0033EC1F /* config.h */,
+				BE18F7CE17B279340033EC1F /* Classes */,
+				BE18F7AF17B278180033EC1F /* Assets */,
+				BE18F79817B277850033EC1F /* AppDelegate.h */,
+				BE18F79917B277850033EC1F /* AppDelegate.m */,
+				BE18F7A117B277850033EC1F /* MainStoryboard_iPhone.storyboard */,
+				BE18F7A417B277850033EC1F /* MainStoryboard_iPad.storyboard */,
+				BE18F7A717B277850033EC1F /* ViewController.h */,
+				BE18F7A817B277850033EC1F /* ViewController.m */,
+				BE18F79017B277850033EC1F /* Supporting Files */,
+			);
+			path = XiaoYuToefl;
+			sourceTree = "<group>";
+		};
+		BE18F79017B277850033EC1F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BE18F79117B277850033EC1F /* XiaoYuToefl-Info.plist */,
+				BE18F79217B277850033EC1F /* InfoPlist.strings */,
+				BE18F79517B277850033EC1F /* main.m */,
+				BE18F79717B277850033EC1F /* XiaoYuToefl-Prefix.pch */,
+				BE18F79B17B277850033EC1F /* Default.png */,
+				BE18F79D17B277850033EC1F /* Default@2x.png */,
+				BE18F79F17B277850033EC1F /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BE18F7AF17B278180033EC1F /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				BE18F7DD17B27EE40033EC1F /* Dict */,
+				BE18F7BD17B278DE0033EC1F /* Images */,
+				BE18F7B617B278990033EC1F /* Audio */,
+				BE18F7B317B2786F0033EC1F /* Particles */,
+				BE18F7B217B278550033EC1F /* Fonts */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		BE18F7B217B278550033EC1F /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				BE18F7B017B278470033EC1F /* Comic_Andy.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+		BE18F7B317B2786F0033EC1F /* Particles */ = {
+			isa = PBXGroup;
+			children = (
+				BE18F7B417B2788E0033EC1F /* particle.png */,
+			);
+			name = Particles;
+			sourceTree = "<group>";
+		};
+		BE18F7B617B278990033EC1F /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				BE18F7B717B278D50033EC1F /* ding.mp3 */,
+				BE18F7B817B278D50033EC1F /* win.mp3 */,
+				BE18F7B917B278D50033EC1F /* wrong.m4a */,
+			);
+			name = Audio;
+			sourceTree = "<group>";
+		};
+		BE18F7BD17B278DE0033EC1F /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				BE18F7BE17B279030033EC1F /* board.jpg */,
+				BE18F7BF17B279030033EC1F /* board@2x.jpg */,
+				BE18F7C017B279030033EC1F /* btn.png */,
+				BE18F7C117B279030033EC1F /* btn@2x.png */,
+				BE18F7C217B279030033EC1F /* slot.png */,
+				BE18F7C317B279030033EC1F /* slot@2x.png */,
+				BE18F7C417B279030033EC1F /* tile.png */,
+				BE18F7C517B279030033EC1F /* tile@2x.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		BE18F7CE17B279340033EC1F /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				BE18F7D117B279480033EC1F /* controllers */,
+				BE18F7D017B279430033EC1F /* views */,
+				BE18F7CF17B2793C0033EC1F /* models */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		BE18F7CF17B2793C0033EC1F /* models */ = {
+			isa = PBXGroup;
+			children = (
+				BE18F7D317B27BF10033EC1F /* Word.h */,
+				BE18F7D417B27BF10033EC1F /* Word.m */,
+			);
+			name = models;
+			sourceTree = "<group>";
+		};
+		BE18F7D017B279430033EC1F /* views */ = {
+			isa = PBXGroup;
+			children = (
+				BE18F7DE17B280B80033EC1F /* TargetView.h */,
+				BE18F7DF17B280B80033EC1F /* TargetView.m */,
+				BE18F7E017B280B80033EC1F /* TileView.h */,
+				BE18F7E117B280B80033EC1F /* TileView.m */,
+			);
+			name = views;
+			sourceTree = "<group>";
+		};
+		BE18F7D117B279480033EC1F /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BE18F7D617B27CB30033EC1F /* GameController.h */,
+				BE18F7D717B27CB30033EC1F /* GameController.m */,
+			);
+			name = controllers;
+			sourceTree = "<group>";
+		};
+		BE18F7DD17B27EE40033EC1F /* Dict */ = {
+			isa = PBXGroup;
+			children = (
+				BE18F7DB17B27DC60033EC1F /* dict_20130807.db */,
+			);
+			name = Dict;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BE18F78517B277840033EC1F /* XiaoYuToefl */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BE18F7AC17B277850033EC1F /* Build configuration list for PBXNativeTarget "XiaoYuToefl" */;
+			buildPhases = (
+				BE18F78217B277840033EC1F /* Sources */,
+				BE18F78317B277840033EC1F /* Frameworks */,
+				BE18F78417B277840033EC1F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = XiaoYuToefl;
+			productName = XiaoYuToefl;
+			productReference = BE18F78617B277840033EC1F /* XiaoYuToefl.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BE18F77E17B277840033EC1F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Xingyin Zhu";
+			};
+			buildConfigurationList = BE18F78117B277840033EC1F /* Build configuration list for PBXProject "XiaoYuToefl" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = BE18F77D17B277840033EC1F;
+			productRefGroup = BE18F78717B277840033EC1F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BE18F78517B277840033EC1F /* XiaoYuToefl */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BE18F78417B277840033EC1F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE18F79417B277850033EC1F /* InfoPlist.strings in Resources */,
+				BE18F79C17B277850033EC1F /* Default.png in Resources */,
+				BE18F79E17B277850033EC1F /* Default@2x.png in Resources */,
+				BE18F7A017B277850033EC1F /* Default-568h@2x.png in Resources */,
+				BE18F7A317B277850033EC1F /* MainStoryboard_iPhone.storyboard in Resources */,
+				BE18F7A617B277850033EC1F /* MainStoryboard_iPad.storyboard in Resources */,
+				BE18F7B117B278470033EC1F /* Comic_Andy.ttf in Resources */,
+				BE18F7B517B2788E0033EC1F /* particle.png in Resources */,
+				BE18F7BA17B278D50033EC1F /* ding.mp3 in Resources */,
+				BE18F7BB17B278D50033EC1F /* win.mp3 in Resources */,
+				BE18F7BC17B278D50033EC1F /* wrong.m4a in Resources */,
+				BE18F7C617B279030033EC1F /* board.jpg in Resources */,
+				BE18F7C717B279030033EC1F /* board@2x.jpg in Resources */,
+				BE18F7C817B279030033EC1F /* btn.png in Resources */,
+				BE18F7C917B279030033EC1F /* btn@2x.png in Resources */,
+				BE18F7CA17B279030033EC1F /* slot.png in Resources */,
+				BE18F7CB17B279030033EC1F /* slot@2x.png in Resources */,
+				BE18F7CC17B279030033EC1F /* tile.png in Resources */,
+				BE18F7CD17B279030033EC1F /* tile@2x.png in Resources */,
+				BE18F7DC17B27DC60033EC1F /* dict_20130807.db in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BE18F78217B277840033EC1F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE18F79617B277850033EC1F /* main.m in Sources */,
+				BE18F79A17B277850033EC1F /* AppDelegate.m in Sources */,
+				BE18F7A917B277850033EC1F /* ViewController.m in Sources */,
+				BE18F7D517B27BF10033EC1F /* Word.m in Sources */,
+				BE18F7D817B27CB30033EC1F /* GameController.m in Sources */,
+				BE18F7E217B280B80033EC1F /* TargetView.m in Sources */,
+				BE18F7E317B280B80033EC1F /* TileView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		BE18F79217B277850033EC1F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BE18F79317B277850033EC1F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		BE18F7A117B277850033EC1F /* MainStoryboard_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BE18F7A217B277850033EC1F /* en */,
+			);
+			name = MainStoryboard_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		BE18F7A417B277850033EC1F /* MainStoryboard_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BE18F7A517B277850033EC1F /* en */,
+			);
+			name = MainStoryboard_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BE18F7AA17B277850033EC1F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BE18F7AB17B277850033EC1F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BE18F7AD17B277850033EC1F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "XiaoYuToefl/XiaoYuToefl-Prefix.pch";
+				INFOPLIST_FILE = "XiaoYuToefl/XiaoYuToefl-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		BE18F7AE17B277850033EC1F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "XiaoYuToefl/XiaoYuToefl-Prefix.pch";
+				INFOPLIST_FILE = "XiaoYuToefl/XiaoYuToefl-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BE18F78117B277840033EC1F /* Build configuration list for PBXProject "XiaoYuToefl" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE18F7AA17B277850033EC1F /* Debug */,
+				BE18F7AB17B277850033EC1F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BE18F7AC17B277850033EC1F /* Build configuration list for PBXNativeTarget "XiaoYuToefl" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE18F7AD17B277850033EC1F /* Debug */,
+				BE18F7AE17B277850033EC1F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BE18F77E17B277840033EC1F /* Project object */;
+}
