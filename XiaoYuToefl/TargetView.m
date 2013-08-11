@@ -1,9 +1,9 @@
 //
 //  TargetView.m
-//  Anagrams
+//  XiaoYuToefl
 //
-//  Created by Marin Todorov on 16/02/2013.
-//  Copyright (c) 2013 Underplot ltd. All rights reserved.
+//  Created by Xingyin Zhu on 13-8-7.
+//  Copyright (c) 2013年 Xingyin Zhu. All rights reserved.
 //
 
 #import "TargetView.h"

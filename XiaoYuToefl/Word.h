@@ -14,9 +14,9 @@
 @property (nonatomic, copy) NSString * englishmark;
 @property (nonatomic, copy) NSString * americamark;
 @property (nonatomic, copy) NSString * meanings;
-@property (nonatomic, copy) NSString * group;
 @property (nonatomic, copy) NSString * hint;
 @property (nonatomic, assign) NSInteger type;
+@property (nonatomic, assign) NSInteger group;
 @property (nonatomic, assign) NSInteger progress;
 
 @end

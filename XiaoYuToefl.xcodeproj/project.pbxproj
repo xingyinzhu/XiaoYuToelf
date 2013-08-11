@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE09361317B752D500B10E4A /* helper.m in Sources */ = {isa = PBXBuildFile; fileRef = BE09361217B752D500B10E4A /* helper.m */; };
+		BE09361617B756CF00B10E4A /* CategoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE09361517B756CF00B10E4A /* CategoryView.m */; };
 		BE18F78A17B277850033EC1F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE18F78917B277840033EC1F /* UIKit.framework */; };
 		BE18F78C17B277850033EC1F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE18F78B17B277850033EC1F /* Foundation.framework */; };
 		BE18F78E17B277850033EC1F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE18F78D17B277850033EC1F /* CoreGraphics.framework */; };
@@ -35,12 +37,33 @@
 		BE18F7D517B27BF10033EC1F /* Word.m in Sources */ = {isa = PBXBuildFile; fileRef = BE18F7D417B27BF10033EC1F /* Word.m */; };
 		BE18F7D817B27CB30033EC1F /* GameController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE18F7D717B27CB30033EC1F /* GameController.m */; };
 		BE18F7DA17B27D800033EC1F /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BE18F7D917B27D800033EC1F /* libsqlite3.dylib */; };
-		BE18F7DC17B27DC60033EC1F /* dict_20130807.db in Resources */ = {isa = PBXBuildFile; fileRef = BE18F7DB17B27DC60033EC1F /* dict_20130807.db */; };
-		BE18F7E217B280B80033EC1F /* TargetView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE18F7DF17B280B80033EC1F /* TargetView.m */; };
-		BE18F7E317B280B80033EC1F /* TileView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE18F7E117B280B80033EC1F /* TileView.m */; };
+		BEE535FB17B5D93200846E3B /* DictHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BEE535FA17B5D93200846E3B /* DictHelper.m */; };
+		BEE5360717B5DA1300846E3B /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = BEE535FE17B5DA1300846E3B /* FMDatabase.m */; };
+		BEE5360817B5DA1300846E3B /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = BEE5360017B5DA1300846E3B /* FMDatabaseAdditions.m */; };
+		BEE5360917B5DA1300846E3B /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = BEE5360217B5DA1300846E3B /* FMDatabasePool.m */; };
+		BEE5360A17B5DA1300846E3B /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = BEE5360417B5DA1300846E3B /* FMDatabaseQueue.m */; };
+		BEE5360B17B5DA1300846E3B /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = BEE5360617B5DA1300846E3B /* FMResultSet.m */; };
+		BEE5360D17B5DBF000846E3B /* FZMW.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BEE5360C17B5DBF000846E3B /* FZMW.ttf */; };
+		BEE5361017B5E4CC00846E3B /* Level.m in Sources */ = {isa = PBXBuildFile; fileRef = BEE5360F17B5E4CC00846E3B /* Level.m */; };
+		BEE5361317B5E58800846E3B /* Category.m in Sources */ = {isa = PBXBuildFile; fileRef = BEE5361217B5E58800846E3B /* Category.m */; };
+		BEE5361517B6A01700846E3B /* dict.db in Resources */ = {isa = PBXBuildFile; fileRef = BEE5361417B6A01700846E3B /* dict.db */; };
+		BEF993A717B70EC0000F8CC1 /* AudioController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF993A617B70EC0000F8CC1 /* AudioController.m */; };
+		BEF993AA17B70F69000F8CC1 /* ExplodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF993A917B70F69000F8CC1 /* ExplodeView.m */; };
+		BEF993AD17B70F9E000F8CC1 /* StarDustView.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF993AC17B70F9E000F8CC1 /* StarDustView.m */; };
+		BEF993AF17B7109E000F8CC1 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEF993AE17B7109E000F8CC1 /* QuartzCore.framework */; };
+		BEF993B117B710B5000F8CC1 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEF993B017B710B5000F8CC1 /* AVFoundation.framework */; };
+		BEF993B317B710CA000F8CC1 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEF993B217B710CA000F8CC1 /* CoreAudio.framework */; };
+		BEF993B517B710E0000F8CC1 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEF993B417B710E0000F8CC1 /* AudioToolbox.framework */; };
+		BEF993C017B71141000F8CC1 /* TargetView.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF993BD17B71141000F8CC1 /* TargetView.m */; };
+		BEF993C117B71141000F8CC1 /* TileView.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF993BF17B71141000F8CC1 /* TileView.m */; };
+		BEF993C417B71171000F8CC1 /* StopwatchView.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF993C317B71171000F8CC1 /* StopwatchView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BE09361117B752D500B10E4A /* helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = helper.h; sourceTree = "<group>"; };
+		BE09361217B752D500B10E4A /* helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = helper.m; sourceTree = "<group>"; };
+		BE09361417B756CF00B10E4A /* CategoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryView.h; sourceTree = "<group>"; };
+		BE09361517B756CF00B10E4A /* CategoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryView.m; sourceTree = "<group>"; };
 		BE18F78617B277840033EC1F /* XiaoYuToefl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XiaoYuToefl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE18F78917B277840033EC1F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BE18F78B17B277850033EC1F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -77,11 +100,40 @@
 		BE18F7D617B27CB30033EC1F /* GameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameController.h; sourceTree = "<group>"; };
 		BE18F7D717B27CB30033EC1F /* GameController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameController.m; sourceTree = "<group>"; };
 		BE18F7D917B27D800033EC1F /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
-		BE18F7DB17B27DC60033EC1F /* dict_20130807.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = dict_20130807.db; sourceTree = "<group>"; };
-		BE18F7DE17B280B80033EC1F /* TargetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TargetView.h; sourceTree = "<group>"; };
-		BE18F7DF17B280B80033EC1F /* TargetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TargetView.m; sourceTree = "<group>"; };
-		BE18F7E017B280B80033EC1F /* TileView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TileView.h; sourceTree = "<group>"; };
-		BE18F7E117B280B80033EC1F /* TileView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TileView.m; sourceTree = "<group>"; };
+		BEE535F917B5D93200846E3B /* DictHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DictHelper.h; sourceTree = "<group>"; };
+		BEE535FA17B5D93200846E3B /* DictHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DictHelper.m; sourceTree = "<group>"; };
+		BEE535FD17B5DA1300846E3B /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		BEE535FE17B5DA1300846E3B /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		BEE535FF17B5DA1300846E3B /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		BEE5360017B5DA1300846E3B /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		BEE5360117B5DA1300846E3B /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		BEE5360217B5DA1300846E3B /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		BEE5360317B5DA1300846E3B /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		BEE5360417B5DA1300846E3B /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		BEE5360517B5DA1300846E3B /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		BEE5360617B5DA1300846E3B /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		BEE5360C17B5DBF000846E3B /* FZMW.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FZMW.ttf; sourceTree = "<group>"; };
+		BEE5360E17B5E4CC00846E3B /* Level.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level.h; sourceTree = "<group>"; };
+		BEE5360F17B5E4CC00846E3B /* Level.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Level.m; sourceTree = "<group>"; };
+		BEE5361117B5E58800846E3B /* Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Category.h; sourceTree = "<group>"; };
+		BEE5361217B5E58800846E3B /* Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Category.m; sourceTree = "<group>"; };
+		BEE5361417B6A01700846E3B /* dict.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = dict.db; sourceTree = "<group>"; };
+		BEF993A517B70EC0000F8CC1 /* AudioController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioController.h; sourceTree = "<group>"; };
+		BEF993A617B70EC0000F8CC1 /* AudioController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioController.m; sourceTree = "<group>"; };
+		BEF993A817B70F69000F8CC1 /* ExplodeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExplodeView.h; sourceTree = "<group>"; };
+		BEF993A917B70F69000F8CC1 /* ExplodeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExplodeView.m; sourceTree = "<group>"; };
+		BEF993AB17B70F9E000F8CC1 /* StarDustView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StarDustView.h; sourceTree = "<group>"; };
+		BEF993AC17B70F9E000F8CC1 /* StarDustView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StarDustView.m; sourceTree = "<group>"; };
+		BEF993AE17B7109E000F8CC1 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		BEF993B017B710B5000F8CC1 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		BEF993B217B710CA000F8CC1 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		BEF993B417B710E0000F8CC1 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		BEF993BC17B71141000F8CC1 /* TargetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TargetView.h; sourceTree = "<group>"; };
+		BEF993BD17B71141000F8CC1 /* TargetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TargetView.m; sourceTree = "<group>"; };
+		BEF993BE17B71141000F8CC1 /* TileView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TileView.h; sourceTree = "<group>"; };
+		BEF993BF17B71141000F8CC1 /* TileView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TileView.m; sourceTree = "<group>"; };
+		BEF993C217B71171000F8CC1 /* StopwatchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StopwatchView.h; sourceTree = "<group>"; };
+		BEF993C317B71171000F8CC1 /* StopwatchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StopwatchView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +141,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEF993B517B710E0000F8CC1 /* AudioToolbox.framework in Frameworks */,
+				BEF993B317B710CA000F8CC1 /* CoreAudio.framework in Frameworks */,
+				BEF993B117B710B5000F8CC1 /* AVFoundation.framework in Frameworks */,
+				BEF993AF17B7109E000F8CC1 /* QuartzCore.framework in Frameworks */,
 				BE18F7DA17B27D800033EC1F /* libsqlite3.dylib in Frameworks */,
 				BE18F78A17B277850033EC1F /* UIKit.framework in Frameworks */,
 				BE18F78C17B277850033EC1F /* Foundation.framework in Frameworks */,
@@ -99,6 +155,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BE09361017B752B900B10E4A /* helper */ = {
+			isa = PBXGroup;
+			children = (
+				BE09361117B752D500B10E4A /* helper.h */,
+				BE09361217B752D500B10E4A /* helper.m */,
+			);
+			name = helper;
+			sourceTree = "<group>";
+		};
 		BE18F77D17B277840033EC1F = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +185,10 @@
 			isa = PBXGroup;
 			children = (
 				BE18F7D917B27D800033EC1F /* libsqlite3.dylib */,
+				BEF993B417B710E0000F8CC1 /* AudioToolbox.framework */,
+				BEF993B217B710CA000F8CC1 /* CoreAudio.framework */,
+				BEF993B017B710B5000F8CC1 /* AVFoundation.framework */,
+				BEF993AE17B7109E000F8CC1 /* QuartzCore.framework */,
 				BE18F78917B277840033EC1F /* UIKit.framework */,
 				BE18F78B17B277850033EC1F /* Foundation.framework */,
 				BE18F78D17B277850033EC1F /* CoreGraphics.framework */,
@@ -131,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				BE18F7D217B2799B0033EC1F /* config.h */,
+				BEE535FC17B5DA1300846E3B /* FMDB */,
 				BE18F7CE17B279340033EC1F /* Classes */,
 				BE18F7AF17B278180033EC1F /* Assets */,
 				BE18F79817B277850033EC1F /* AppDelegate.h */,
@@ -173,6 +243,7 @@
 		BE18F7B217B278550033EC1F /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				BEE5360C17B5DBF000846E3B /* FZMW.ttf */,
 				BE18F7B017B278470033EC1F /* Comic_Andy.ttf */,
 			);
 			name = Fonts;
@@ -214,6 +285,7 @@
 		BE18F7CE17B279340033EC1F /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				BE09361017B752B900B10E4A /* helper */,
 				BE18F7D117B279480033EC1F /* controllers */,
 				BE18F7D017B279430033EC1F /* views */,
 				BE18F7CF17B2793C0033EC1F /* models */,
@@ -226,6 +298,12 @@
 			children = (
 				BE18F7D317B27BF10033EC1F /* Word.h */,
 				BE18F7D417B27BF10033EC1F /* Word.m */,
+				BEE535F917B5D93200846E3B /* DictHelper.h */,
+				BEE535FA17B5D93200846E3B /* DictHelper.m */,
+				BEE5360E17B5E4CC00846E3B /* Level.h */,
+				BEE5360F17B5E4CC00846E3B /* Level.m */,
+				BEE5361117B5E58800846E3B /* Category.h */,
+				BEE5361217B5E58800846E3B /* Category.m */,
 			);
 			name = models;
 			sourceTree = "<group>";
@@ -233,10 +311,18 @@
 		BE18F7D017B279430033EC1F /* views */ = {
 			isa = PBXGroup;
 			children = (
-				BE18F7DE17B280B80033EC1F /* TargetView.h */,
-				BE18F7DF17B280B80033EC1F /* TargetView.m */,
-				BE18F7E017B280B80033EC1F /* TileView.h */,
-				BE18F7E117B280B80033EC1F /* TileView.m */,
+				BEF993C217B71171000F8CC1 /* StopwatchView.h */,
+				BEF993C317B71171000F8CC1 /* StopwatchView.m */,
+				BEF993BC17B71141000F8CC1 /* TargetView.h */,
+				BEF993BD17B71141000F8CC1 /* TargetView.m */,
+				BEF993BE17B71141000F8CC1 /* TileView.h */,
+				BEF993BF17B71141000F8CC1 /* TileView.m */,
+				BE09361417B756CF00B10E4A /* CategoryView.h */,
+				BE09361517B756CF00B10E4A /* CategoryView.m */,
+				BEF993AB17B70F9E000F8CC1 /* StarDustView.h */,
+				BEF993AC17B70F9E000F8CC1 /* StarDustView.m */,
+				BEF993A817B70F69000F8CC1 /* ExplodeView.h */,
+				BEF993A917B70F69000F8CC1 /* ExplodeView.m */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -244,6 +330,8 @@
 		BE18F7D117B279480033EC1F /* controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BEF993A517B70EC0000F8CC1 /* AudioController.h */,
+				BEF993A617B70EC0000F8CC1 /* AudioController.m */,
 				BE18F7D617B27CB30033EC1F /* GameController.h */,
 				BE18F7D717B27CB30033EC1F /* GameController.m */,
 			);
@@ -253,9 +341,26 @@
 		BE18F7DD17B27EE40033EC1F /* Dict */ = {
 			isa = PBXGroup;
 			children = (
-				BE18F7DB17B27DC60033EC1F /* dict_20130807.db */,
+				BEE5361417B6A01700846E3B /* dict.db */,
 			);
 			name = Dict;
+			sourceTree = "<group>";
+		};
+		BEE535FC17B5DA1300846E3B /* FMDB */ = {
+			isa = PBXGroup;
+			children = (
+				BEE535FD17B5DA1300846E3B /* FMDatabase.h */,
+				BEE535FE17B5DA1300846E3B /* FMDatabase.m */,
+				BEE535FF17B5DA1300846E3B /* FMDatabaseAdditions.h */,
+				BEE5360017B5DA1300846E3B /* FMDatabaseAdditions.m */,
+				BEE5360117B5DA1300846E3B /* FMDatabasePool.h */,
+				BEE5360217B5DA1300846E3B /* FMDatabasePool.m */,
+				BEE5360317B5DA1300846E3B /* FMDatabaseQueue.h */,
+				BEE5360417B5DA1300846E3B /* FMDatabaseQueue.m */,
+				BEE5360517B5DA1300846E3B /* FMResultSet.h */,
+				BEE5360617B5DA1300846E3B /* FMResultSet.m */,
+			);
+			path = FMDB;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -328,7 +433,8 @@
 				BE18F7CB17B279030033EC1F /* slot@2x.png in Resources */,
 				BE18F7CC17B279030033EC1F /* tile.png in Resources */,
 				BE18F7CD17B279030033EC1F /* tile@2x.png in Resources */,
-				BE18F7DC17B27DC60033EC1F /* dict_20130807.db in Resources */,
+				BEE5360D17B5DBF000846E3B /* FZMW.ttf in Resources */,
+				BEE5361517B6A01700846E3B /* dict.db in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,8 +450,22 @@
 				BE18F7A917B277850033EC1F /* ViewController.m in Sources */,
 				BE18F7D517B27BF10033EC1F /* Word.m in Sources */,
 				BE18F7D817B27CB30033EC1F /* GameController.m in Sources */,
-				BE18F7E217B280B80033EC1F /* TargetView.m in Sources */,
-				BE18F7E317B280B80033EC1F /* TileView.m in Sources */,
+				BEE535FB17B5D93200846E3B /* DictHelper.m in Sources */,
+				BEE5360717B5DA1300846E3B /* FMDatabase.m in Sources */,
+				BEE5360817B5DA1300846E3B /* FMDatabaseAdditions.m in Sources */,
+				BEE5360917B5DA1300846E3B /* FMDatabasePool.m in Sources */,
+				BEE5360A17B5DA1300846E3B /* FMDatabaseQueue.m in Sources */,
+				BEE5360B17B5DA1300846E3B /* FMResultSet.m in Sources */,
+				BEE5361017B5E4CC00846E3B /* Level.m in Sources */,
+				BEE5361317B5E58800846E3B /* Category.m in Sources */,
+				BEF993A717B70EC0000F8CC1 /* AudioController.m in Sources */,
+				BEF993AA17B70F69000F8CC1 /* ExplodeView.m in Sources */,
+				BEF993AD17B70F9E000F8CC1 /* StarDustView.m in Sources */,
+				BEF993C017B71141000F8CC1 /* TargetView.m in Sources */,
+				BEF993C117B71141000F8CC1 /* TileView.m in Sources */,
+				BEF993C417B71171000F8CC1 /* StopwatchView.m in Sources */,
+				BE09361317B752D500B10E4A /* helper.m in Sources */,
+				BE09361617B756CF00B10E4A /* CategoryView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -478,6 +598,7 @@
 				BE18F7AE17B277850033EC1F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

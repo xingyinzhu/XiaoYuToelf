@@ -10,13 +10,5 @@
 
 @implementation Word
 
-@synthesize word = _word;
-@synthesize englishmark = _englishmark;
-@synthesize americamark = _americamark;
-@synthesize meanings = _meanings;
-@synthesize group = _group;
-@synthesize hint = _hint;
-@synthesize type = _type;
-@synthesize progress = _progress;
 
 @end

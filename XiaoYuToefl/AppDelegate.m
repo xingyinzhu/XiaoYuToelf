@@ -7,12 +7,54 @@
 //
 
 #import "AppDelegate.h"
+#import "DictHelper.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    NSArray *familyNames =[[NSArray alloc]initWithArray:[UIFont familyNames]];
+    
+	
+    
+    NSArray *fontNames;
+    
+	
+    
+    NSInteger indFamily, indFont;
+    
+	
+    
+    for(indFamily=0;indFamily<[familyNames count];++indFamily)
+        
+	{
+        
+		NSLog(@"Family name: %@", [familyNames objectAtIndex:indFamily]);
+        
+		
+        
+        fontNames =[[NSArray alloc]initWithArray:[UIFont fontNamesForFamilyName:[familyNames objectAtIndex:indFamily]]];
+        
+		
+        
+		for(indFont=0; indFont<[fontNames count]; ++indFont)
+            
+		{
+            
+			NSLog(@"    Font name: %@",[fontNames objectAtIndex:indFont]);
+            
+        }
+        
+	
+        
+	}
+    
+
+    
+    [[UIApplication sharedApplication] setStatusBarHidden:YES];
+    [self startLoadDict];
+    
     return YES;
 }
 							
@@ -41,6 +83,14 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    [DictHelper closeDict];
+}
+
+- (void)startLoadDict
+{
+    [DictHelper CopyDict];
+    [DictHelper OpenDict];
+    [DictHelper loadWords];
 }
 
 @end
