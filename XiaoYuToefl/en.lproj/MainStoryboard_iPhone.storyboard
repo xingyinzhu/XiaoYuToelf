@@ -16,10 +16,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="gVL-CN-pSf" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" type="default" id="96z-6r-rr9"/>
-                            <constraint firstItem="gVL-CN-pSf" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="SNC-zD-66y"/>
-                            <constraint firstItem="gVL-CN-pSf" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="l2H-kW-cUw"/>
-                            <constraint firstItem="gVL-CN-pSf" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="ne3-nr-UFB"/>
+                            <constraint firstItem="gVL-CN-pSf" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" type="default" id="LqW-HS-kOt"/>
+                            <constraint firstItem="gVL-CN-pSf" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="f57-AY-CGp"/>
+                            <constraint firstItem="gVL-CN-pSf" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="lGf-5d-LGt"/>
+                            <constraint firstItem="gVL-CN-pSf" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="uup-rf-I4V"/>
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>

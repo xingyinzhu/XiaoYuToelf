@@ -24,7 +24,12 @@
     //tile lists
     NSMutableArray * _tiles;
     NSMutableArray * _targets;
-    NSMutableArray * _categorys;
+    NSMutableArray * _passed;
+    NSInteger        currentWordIndex;
+    
+    //stopwatch variables
+    int _secondsLeft;
+    NSTimer* _timer;
 }
 
 -(instancetype)init
@@ -51,6 +56,7 @@
     int kCategoryRowNum = (int)((kScreenHeight / (kTileMargin + kCategorySidelength)));
     int pages = ceilf(totalCount * 1.0 / ( kCategoryColNum * kCategoryRowNum));
     
+    //平均间距
     int averageColMargin = (kScreenWidth - kCategoryColNum * kCategorySidelength) / (kCategoryColNum + 1);
     int averageRowMargin = (kScreenHeight - kCategoryRowNum * kCategorySidelength) / (kCategoryRowNum + 1);
     
@@ -75,6 +81,7 @@
         [button addTarget:self action:@selector(categoryViewPressed:) forControlEvents:UIControlEventTouchUpInside];
         
         [scrollView addSubview:categoryView];
+        scrollView.showsHorizontalScrollIndicator = NO;
         [scrollView addSubview:button];
         
         index++;
@@ -93,19 +100,37 @@
     NSLog(@"%d",categoryid);
     _category = [Category categoryWithId:categoryid];
     [self clearBoard];
-    [self dealRandomWord];
-    //self.onAnagramSolved();
+    NSLog(@"%d",[self.category.categoryDict count]);
+    
+    
+    int totalCount = self.category.categoryDict.count;
+    _passed = [[NSMutableArray alloc]initWithCapacity:totalCount];
+    for (int i = 0 ; i < totalCount ; i++)
+    {
+        _passed[i] = [NSNumber numberWithInteger:nopassed];
+    }
+    
+    [self startGameByRandomSelect];
+    [_hud setHidden:NO];
 }
 
-//tmp function
-- (void)dealRandomWord
+- (void)startGameByRandomSelect
 {
-    //NSAssert(self.level.categorys, @"no level loaded");
+    int totalCount = self.category.categoryDict.count;
+    currentWordIndex = arc4random() % totalCount;
+    while ([_passed[currentWordIndex] integerValue]  == passed)
+    {
+        currentWordIndex = arc4random() % totalCount;
+    }
+        
+    [self dealOneWordWithIndex];
+}
+
+- (void)dealOneWordWithIndex
+{
     NSAssert(self.category.categoryDict, @"no dict loaded");
     
-    //random anagram
-    int randomIndex = arc4random()%[self.category.categoryDict count];
-    Word *word = self.category.categoryDict[randomIndex];
+    Word *word = self.category.categoryDict[currentWordIndex];
     NSString *wordString = word.word;
     
     int length = [wordString length];
@@ -158,6 +183,9 @@
             [_tiles addObject: tile];
         }
     }
+    
+    //start the timer
+    [self startStopwatch];
 }
 
 //a tile was dragged, check if matches a target
@@ -240,20 +268,16 @@
     [tileView.superview sendSubviewToBack:explode];
 }
 
--(void)checkForSuccess
+- (BOOL)isPassedTest
 {
-    for (TargetView* t in _targets)
+    //check if passed all the words test
+    int totalCount = [self.category.categoryDict count];
+    for (int i = 0; i < totalCount ; i++)
     {
-        //no success, bail out
-        if (t.isMatched==NO) return;
+        if ([_passed[i] integerValue] == nopassed)
+            return FALSE;
     }
     
-    NSLog(@"Game Over!");
-    
-    //stop the stopwatch
-    //[self stopStopwatch];
-    
-    //the anagram is completed!
     [self.audioController playEffect:kSoundWin];
     
     //win animation
@@ -279,8 +303,34 @@
                          
                          //when animation is finished, show menu
                          [self clearBoard];
+                         [_hud setHidden:YES];
                          self.onAnagramSolved();
                      }];
+    
+    return TRUE;
+}
+
+- (void)checkForSuccess
+{
+    for (TargetView* t in _targets)
+    {
+        //no success, bail out
+        if (t.isMatched==NO) return;
+    }
+    
+    NSLog(@"Game Over!");
+    
+    //stop the stopwatch
+    [self stopStopwatch];
+    
+    _passed[currentWordIndex] = [NSNumber numberWithInteger:passed];
+    
+    if ([self isPassedTest] == FALSE)
+    {
+        [self clearBoard];
+        [self startGameByRandomSelect];
+    }
+    
 }
 
 //clear the tiles and targets
@@ -288,12 +338,99 @@
 {
     [_tiles removeAllObjects];
     [_targets removeAllObjects];
-    [_categorys removeAllObjects];
     
     for (UIView *view in self.gameView.subviews)
     {
         [view removeFromSuperview];
     }
+}
+
+-(void)startStopwatch
+{
+    //initialize the timer HUD
+    //todo
+    _secondsLeft = kSecondsLeft;
+    [self.hud.stopwatch setSeconds:kSecondsLeft];
+    
+    //schedule a new timer
+    _timer = [NSTimer scheduledTimerWithTimeInterval:1.0
+                                              target:self
+                                            selector:@selector(tick:)
+                                            userInfo:nil
+                                             repeats:YES];
+}
+
+//stopwatch on tick
+-(void)tick:(NSTimer*)timer
+{
+    _secondsLeft --;
+    [self.hud.stopwatch setSeconds:_secondsLeft];
+    
+    if (_secondsLeft==0) {
+        [self stopStopwatch];
+    }
+}
+
+//stop the watch
+-(void)stopStopwatch
+{
+    [_timer invalidate];
+    _timer = nil;
+}
+
+//connect the Hint button
+-(void)setHud:(HUDView *)hud
+{
+    _hud = hud;
+    [hud.btnHelp addTarget:self action:@selector(actionHint) forControlEvents:UIControlEventTouchUpInside];
+}
+
+//the user pressed the hint button
+-(void)actionHint
+{
+    self.hud.btnHelp.enabled = NO;
+    
+    //self.data.points -= self.level.pointsPerTile/2;
+    //[self.hud.gamePoints countTo: self.data.points withDuration: 1.5];
+    
+    // find the first target, not matched yet
+    TargetView* target = nil;
+    for (TargetView* t in _targets) {
+        if (t.isMatched==NO) {
+            target = t;
+            break;
+        }
+    }
+    
+    // find the first tile, matching the target
+    TileView* tile = nil;
+    for (TileView* t in _tiles) {
+        if (t.isMatched==NO && [t.letter isEqualToString:target.letter]) {
+            tile = t;
+            break;
+        }
+    }
+    
+    // don't want the tile sliding under other tiles
+    [self.gameView bringSubviewToFront:tile];
+    
+    //show the animation to the user
+    [UIView animateWithDuration:1.5
+                          delay:0
+                        options:UIViewAnimationOptionCurveEaseOut
+                     animations:^{
+                         tile.center = target.center;
+                     } completion:^(BOOL finished) {
+                         // adjust view on spot
+                         [self placeTile:tile atTarget:target];
+                         
+                         // check for finished game
+                         [self checkForSuccess];
+                         
+                         // re-enable the button
+                         self.hud.btnHelp.enabled = YES;
+                     }];
+    
 }
 
 @end

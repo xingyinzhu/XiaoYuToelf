@@ -11,6 +11,8 @@
 #import "Category.h"
 #import "AudioController.h"
 #import "TileView.h"
+#import "HUDView.h"
+#import "GameData.h"
 
 typedef void (^CallbackBlock)();
 
@@ -22,11 +24,14 @@ typedef void (^CallbackBlock)();
 
 @property (nonatomic, strong) Category * category;
 
-@property (strong, nonatomic) AudioController* audioController;
+@property (strong, nonatomic) AudioController * audioController;
 
 @property (strong, nonatomic) CallbackBlock onAnagramSolved;
 
-- (void)dealRandomWord;
+@property (weak, nonatomic) HUDView * hud;
+
+@property (strong, nonatomic) GameData * data;
+
 - (void)dealCategoryWithLevel : (NSInteger)levelNum;
 
 @end

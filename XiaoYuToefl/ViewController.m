@@ -36,6 +36,12 @@
     
     self.controller.gameView = gameLayer;
     
+    //add one layer for all hud and controls
+    HUDView* hudView = [HUDView viewWithRect:CGRectMake(0, 0, kScreenWidth, kScreenHeight)];
+    [self.view addSubview:hudView];
+    [hudView setHidden:YES];
+    self.controller.hud = hudView;
+    
     __weak ViewController* weakSelf = self;
     self.controller.onAnagramSolved = ^(){
         [weakSelf showLevelMenu];
@@ -56,17 +62,9 @@
     [self showLevelMenu];
 }
 
-- (void)randomTest
-{
-    self.controller.level = [Level levelWithNum:1];
-    self.controller.category = [Category categoryWithId:1];
-    [self.controller dealRandomWord];
-
-}
-
 - (void)showLevelMenu
 {
-    UIActionSheet *action = [[UIActionSheet alloc]initWithTitle:@"选择难度"
+    UIActionSheet *action = [[UIActionSheet alloc]initWithTitle:@"欢迎来到老鱼儿托福单词世界"
                                                 delegate:self
                                                 cancelButtonTitle:nil
                                                 destructiveButtonTitle:nil
@@ -94,12 +92,28 @@
     }
 }
 
+- (void)willPresentActionSheet:(UIActionSheet *)actionSheet
+{
+    for (UIView *_currentView in actionSheet.subviews)
+    {
+        if ([_currentView isKindOfClass:[UILabel class]])
+        {
+            [((UILabel *)_currentView) setFont:kFZMWFontActionSheetTitle];
+        }
+        
+        if ([_currentView isKindOfClass:[UIButton class]])
+        {
+            UIButton * btn = (UIButton *)_currentView;
+            btn.titleLabel.font = kFZMWFontNormalText;
+        }
+    }
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 
 
 @end

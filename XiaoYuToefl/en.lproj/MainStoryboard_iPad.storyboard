@@ -16,8 +16,8 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="DKu-mH-G33" firstAttribute="leading" secondItem="5" secondAttribute="leading" type="default" id="RfB-xM-bVe"/>
-                            <constraint firstItem="DKu-mH-G33" firstAttribute="top" secondItem="5" secondAttribute="top" type="default" id="hmp-Xx-1M2"/>
+                            <constraint firstItem="DKu-mH-G33" firstAttribute="leading" secondItem="5" secondAttribute="leading" type="default" id="JDz-ln-snd"/>
+                            <constraint firstItem="DKu-mH-G33" firstAttribute="top" secondItem="5" secondAttribute="top" type="default" id="yU8-16-rvI"/>
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>

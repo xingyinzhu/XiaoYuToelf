@@ -18,7 +18,7 @@
         // Initialization code
       
       self.backgroundColor = [UIColor clearColor];
-      self.font = kFontHUDBig;
+      self.font = kFZMWFontGameTextBig;
     }
     return self;
 }
@@ -27,7 +27,7 @@
 //to an int parameter (eg the seconds left)
 -(void)setSeconds:(int)seconds
 {
-  self.text = [NSString stringWithFormat:@" %02.f : %02i", round(seconds / 60), seconds % 60 ];
+  self.text = [NSString stringWithFormat:@" %02.f:%02i", round(seconds / 60), seconds % 60 ];
 }
 
 @end

@@ -59,7 +59,7 @@
         lblChar.textColor = [UIColor whiteColor];
         lblChar.text = categoryName;
         lblChar.backgroundColor = [UIColor clearColor];
-        lblChar.font = kFZMWFont;
+        lblChar.font = kFZMWFontNormalText;
         [self addSubview:lblChar];
         
         _categoryName = categoryName;
