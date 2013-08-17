@@ -10,12 +10,16 @@
 #import <UIKit/UIKit.h>
 #import "StopwatchView.h"
 #import "CounterLabelView.h"
+#include "ExplainationLabelView.h"
 
 @interface HUDView : UIView
 
 @property (strong, nonatomic) StopwatchView* stopwatch;
 @property (strong, nonatomic) CounterLabelView* gamePoints;
-@property (strong, nonatomic) UIButton* btnHelp;
+@property (strong, nonatomic) UIButton * btnHelp;
+@property (strong, nonatomic) UIButton * btnExit;
+@property (strong, nonatomic) ExplainationLabelView * explaination;
+@property (strong, nonatomic) UILabel * remainCount;
 
 +(instancetype)viewWithRect:(CGRect)r;
 

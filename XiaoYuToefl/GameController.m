@@ -26,10 +26,14 @@
     NSMutableArray * _targets;
     NSMutableArray * _passed;
     NSInteger        currentWordIndex;
+    NSInteger        currentMaxScore;
     
     //stopwatch variables
     int _secondsLeft;
     NSTimer* _timer;
+    
+    //
+    NSInteger _currentLevel;
 }
 
 -(instancetype)init
@@ -37,6 +41,8 @@
     self = [super init];
     if (self != nil)
     {
+        self.data = [[GameData alloc]init];
+        
         self.audioController = [[AudioController alloc]init];
         [self.audioController preloadAudioEffects:kAudioEffectFiles];
     }
@@ -46,11 +52,13 @@
 - (void)dealCategoryWithLevel : (NSInteger)levelNum
 {
     NSAssert(self.level.categorys, @"no level loaded");
-    NSLog(@"in dealCategoryWithLevel");
+    
+    _currentLevel = levelNum;
     
     int totalCount = [self.level.categorys count];
+    //init score
     
-    NSLog(@"kScreenWidth : %f kScreenHeight : %f",kScreenWidth,kScreenHeight);
+    [_data initScoreWithTotalCount:totalCount];
     
     int kCategoryColNum = (int)((kScreenWidth / (kTileMargin + kCategorySidelength)));
     int kCategoryRowNum = (int)((kScreenHeight / (kTileMargin + kCategorySidelength)));
@@ -70,11 +78,23 @@
     
     for (Category * category in self.level.categorys)
     {
+        //category
         CategoryView * categoryView = [[CategoryView alloc]initWithName:category.categoryName andSideLength:kCategorySidelength];
         categoryView.frame = CGRectMake(currentCol*kCategorySidelength + averageColMargin*(currentCol+1),
                                         currentRow*kCategorySidelength + averageRowMargin*(currentRow+1),
                                         kCategorySidelength, kCategorySidelength);
-     
+        
+        //progress of category
+        UIProgressView * progress = [[UIProgressView alloc]initWithProgressViewStyle:UIProgressViewStyleDefault];
+        progress.frame = CGRectMake((kCategorySidelength-kProgressBarWidth)/2,
+                                    kCategorySidelength * 4 / 5,
+                                    kProgressBarWidth, 1);
+        progress.progressTintColor = kProgressBarColor;
+        [progress setProgress:[category calcProgressInCategory]];
+        [categoryView addSubview:progress];
+        
+        
+        //category button
         UIButton * button = [[UIButton alloc]initWithFrame:categoryView.frame];
         [button setBackgroundColor:[UIColor clearColor]];
         [button setTag:koffsetTagValue + category.categoryid];
@@ -97,10 +117,8 @@
 - (void)categoryViewPressed:(UIButton *)sender
 {
     int categoryid = sender.tag - koffsetTagValue;
-    NSLog(@"%d",categoryid);
     _category = [Category categoryWithId:categoryid];
     [self clearBoard];
-    NSLog(@"%d",[self.category.categoryDict count]);
     
     
     int totalCount = self.category.categoryDict.count;
@@ -122,8 +140,24 @@
     {
         currentWordIndex = arc4random() % totalCount;
     }
-        
+    
+    NSInteger remainCount = [self calcRemainCount];
+    NSString * remainCountLabel = [NSString stringWithFormat:@"Remain : %d",remainCount];
+    [self.hud.remainCount setText : remainCountLabel];
+    
     [self dealOneWordWithIndex];
+}
+
+- (NSInteger)calcRemainCount
+{
+    NSInteger res = 0;
+    int totalCount = [self.category.categoryDict count];
+    for (int i = 0; i < totalCount ; i++)
+    {
+        if ([_passed[i] integerValue] == nopassed)
+            res++;
+    }
+    return res;
 }
 
 - (void)dealOneWordWithIndex
@@ -132,11 +166,13 @@
     
     Word *word = self.category.categoryDict[currentWordIndex];
     NSString *wordString = word.word;
+    currentMaxScore = kEveryWordScore;
+    
+    [self.hud.explaination setExplainationText:word.meanings];
     
     int length = [wordString length];
     
     //calculate the tile size
-    NSLog(@"kTileMargin : %d",kTileMargin);
     float tileSide = ceilf( kScreenWidth*0.9 / (float)length) - kTileMargin;
     
     //get the left margin for first tile
@@ -215,10 +251,6 @@
             //more stuff to do on success here
             [self.audioController playEffect: kSoundDing];
             
-            //give points
-            //self.data.points += self.level.pointsPerTile;
-            //[self.hud.gamePoints countTo:self.data.points withDuration:1.5];
-            
             //check for finished game
             [self checkForSuccess];
         }
@@ -238,9 +270,6 @@
             //more stuff to do on failure here
             [self.audioController playEffect:kSoundWrong];
             
-            //take out points
-            //self.data.points -= self.level.pointsPerTile/2;
-            //[self.hud.gamePoints countTo:self.data.points withDuration:.75];
         }
     }
 }
@@ -291,6 +320,8 @@
     [self.gameView addSubview:stars];
     [self.gameView sendSubviewToBack:stars];
     
+    [self.data saveScoreWithCategoryDict:self.category.categoryDict];
+    
     [UIView animateWithDuration:3
                           delay:0
                         options:UIViewAnimationOptionCurveEaseOut
@@ -318,12 +349,14 @@
         if (t.isMatched==NO) return;
     }
     
-    NSLog(@"Game Over!");
-    
     //stop the stopwatch
     [self stopStopwatch];
-    
     _passed[currentWordIndex] = [NSNumber numberWithInteger:passed];
+    
+    //todo xzhu
+    self.data.points += currentMaxScore;
+    [self.hud.gamePoints countTo:self.data.points withDuration:1.5];
+    self.data.score[currentWordIndex] = [NSNumber numberWithInt:currentMaxScore];
     
     if ([self isPassedTest] == FALSE)
     {
@@ -368,6 +401,8 @@
     
     if (_secondsLeft==0) {
         [self stopStopwatch];
+        [self clearBoard];
+        [self startGameByRandomSelect];
     }
 }
 
@@ -383,16 +418,14 @@
 {
     _hud = hud;
     [hud.btnHelp addTarget:self action:@selector(actionHint) forControlEvents:UIControlEventTouchUpInside];
+    [hud.btnExit addTarget:self action:@selector(actionExit) forControlEvents:UIControlEventTouchUpInside];
 }
 
 //the user pressed the hint button
 -(void)actionHint
 {
     self.hud.btnHelp.enabled = NO;
-    
-    //self.data.points -= self.level.pointsPerTile/2;
-    //[self.hud.gamePoints countTo: self.data.points withDuration: 1.5];
-    
+
     // find the first target, not matched yet
     TargetView* target = nil;
     for (TargetView* t in _targets) {
@@ -431,6 +464,16 @@
                          self.hud.btnHelp.enabled = YES;
                      }];
     
+    currentMaxScore = currentMaxScore / 2;
+}
+
+-(void)actionExit
+{
+    [self clearBoard];
+    [_hud setHidden:YES];
+    [self stopStopwatch];
+    [self.data saveScoreWithCategoryDict:self.category.categoryDict];
+    [self dealCategoryWithLevel:_currentLevel];
 }
 
 @end

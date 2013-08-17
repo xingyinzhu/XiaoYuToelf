@@ -10,4 +10,14 @@
 
 @interface GameData : NSObject
 
+@property (assign, nonatomic) NSInteger points;
+//total score only for display
+@property(nonatomic, strong) NSMutableArray * score;
+
+- (void)initScoreWithTotalCount: (NSInteger)totalCount;
+
+//- (void)byCategoryDictIndex : (NSInteger) index;
+
+- (void)saveScoreWithCategoryDict : (NSArray *)dict;
+
 @end

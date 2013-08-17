@@ -90,6 +90,10 @@
         self.controller.level = [Level levelWithNum:levelNum];
         [self.controller dealCategoryWithLevel:levelNum];
     }
+    else
+    {
+        [self showLevelMenu];
+    }
 }
 
 - (void)willPresentActionSheet:(UIActionSheet *)actionSheet

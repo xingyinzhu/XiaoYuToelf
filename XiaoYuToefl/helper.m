@@ -12,7 +12,6 @@
 
 + (NSString *)randomWordString:(NSString *)string
 {
-    NSLog(@"origin string : %@", string );
     int length = [string length];
     bool used[length];
     for (NSUInteger i = 0U; i < length; i++)

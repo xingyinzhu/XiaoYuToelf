@@ -12,6 +12,7 @@
 		BE01B13217B92D3900249357 /* GameData.m in Sources */ = {isa = PBXBuildFile; fileRef = BE01B13117B92D3900249357 /* GameData.m */; };
 		BE09361317B752D500B10E4A /* helper.m in Sources */ = {isa = PBXBuildFile; fileRef = BE09361217B752D500B10E4A /* helper.m */; };
 		BE09361617B756CF00B10E4A /* CategoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE09361517B756CF00B10E4A /* CategoryView.m */; };
+		BE18ED5817BE516900834408 /* ExplainationLabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE18ED5717BE516900834408 /* ExplainationLabelView.m */; };
 		BE18F78A17B277850033EC1F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE18F78917B277840033EC1F /* UIKit.framework */; };
 		BE18F78C17B277850033EC1F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE18F78B17B277850033EC1F /* Foundation.framework */; };
 		BE18F78E17B277850033EC1F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE18F78D17B277850033EC1F /* CoreGraphics.framework */; };
@@ -73,6 +74,8 @@
 		BE09361217B752D500B10E4A /* helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = helper.m; sourceTree = "<group>"; };
 		BE09361417B756CF00B10E4A /* CategoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryView.h; sourceTree = "<group>"; };
 		BE09361517B756CF00B10E4A /* CategoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryView.m; sourceTree = "<group>"; };
+		BE18ED5617BE516900834408 /* ExplainationLabelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExplainationLabelView.h; sourceTree = "<group>"; };
+		BE18ED5717BE516900834408 /* ExplainationLabelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExplainationLabelView.m; sourceTree = "<group>"; };
 		BE18F78617B277840033EC1F /* XiaoYuToefl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XiaoYuToefl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE18F78917B277840033EC1F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BE18F78B17B277850033EC1F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -324,10 +327,12 @@
 			children = (
 				BE01B12A17B91C7600249357 /* CounterLabelView.h */,
 				BE01B12B17B91C7600249357 /* CounterLabelView.m */,
-				BE01B12C17B91C7600249357 /* HUDView.h */,
-				BE01B12D17B91C7600249357 /* HUDView.m */,
 				BEF993C217B71171000F8CC1 /* StopwatchView.h */,
 				BEF993C317B71171000F8CC1 /* StopwatchView.m */,
+				BE18ED5617BE516900834408 /* ExplainationLabelView.h */,
+				BE18ED5717BE516900834408 /* ExplainationLabelView.m */,
+				BE01B12C17B91C7600249357 /* HUDView.h */,
+				BE01B12D17B91C7600249357 /* HUDView.m */,
 				BEF993BC17B71141000F8CC1 /* TargetView.h */,
 				BEF993BD17B71141000F8CC1 /* TargetView.m */,
 				BEF993BE17B71141000F8CC1 /* TileView.h */,
@@ -484,6 +489,7 @@
 				BE01B12E17B91C7600249357 /* CounterLabelView.m in Sources */,
 				BE01B12F17B91C7600249357 /* HUDView.m in Sources */,
 				BE01B13217B92D3900249357 /* GameData.m in Sources */,
+				BE18ED5817BE516900834408 /* ExplainationLabelView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

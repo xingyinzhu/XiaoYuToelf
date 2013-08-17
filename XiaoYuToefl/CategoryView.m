@@ -61,7 +61,7 @@
         lblChar.backgroundColor = [UIColor clearColor];
         lblChar.font = kFZMWFontNormalText;
         [self addSubview:lblChar];
-        
+        //lblChar.textColor = kProgressBarColor;
         _categoryName = categoryName;
         self.userInteractionEnabled = YES;
     }

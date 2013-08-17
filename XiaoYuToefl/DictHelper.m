@@ -172,5 +172,55 @@ static NSMutableDictionary *categoryDict;
     return [filemanager fileExistsAtPath:dictPath];
 }
 
++ (CGFloat)calcProgressWithCategoryDict : (NSInteger)categoryId
+{
+    
+    NSInteger totalProgress = 0;
+    NSInteger currentProgress = 0;
+    
+    NSArray * array = [DictHelper fetchWordsWithCategoryId:categoryId];
+    
+    for (Word * word in array)
+    {
+        NSString * wordString = word.word;
+        NSString * sql = [NSString stringWithFormat:@"select * from progress where word = '%@'",wordString];
+        FMResultSet *result = [dictDataBase executeQuery:sql];
+        while ([result next])
+        {
+            currentProgress += [result intForColumn:@"value"];
+            totalProgress += [result intForColumn:@"goal"];
+            break;
+        }
+    }
+    //NSLog(@"currentProgress : %d totalProgress: %d",currentProgress,totalProgress);
+    return currentProgress * 1.0f / totalProgress;
+    
+}
+
++ (BOOL)updateProgressWithWord:(NSString *)word withScore:(NSInteger)score
+{
+    NSLog(@"%@ : %d",word,score);
+    
+    BOOL success;
+    NSInteger currentProgress = 0;
+    NSInteger goal = 0;
+    NSString * sql = [NSString stringWithFormat:@"select * from progress where word = '%@'",word];
+    FMResultSet *result = [dictDataBase executeQuery:sql];
+    
+    while ([result next])
+    {
+        currentProgress = [result intForColumn:@"value"];
+        goal = [result intForColumn:@"goal"];
+        break;
+    }
+    
+    currentProgress += score;
+    currentProgress = MIN(currentProgress,goal);
+    
+    sql = [NSString stringWithFormat:@"update progress set value = %d where word = '%@'",currentProgress,word];
+    
+    success =  [dictDataBase executeUpdate:sql];
+    return success;
+}
 
 @end

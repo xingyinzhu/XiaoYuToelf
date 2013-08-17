@@ -20,6 +20,11 @@
 + (NSMutableArray*)fetchCategoryWithLevel: (NSInteger)level;
 + (NSMutableArray*)fetchWordsWithCategoryId: (NSInteger)categoryid;
 
+
 + (BOOL)DictIsExist : (NSFileManager *)filemanager;
+
++ (CGFloat)calcProgressWithCategoryDict : (NSInteger)categoryId;
+
++ (BOOL)updateProgressWithWord:(NSString *)word withScore:(NSInteger)score;
 
 @end

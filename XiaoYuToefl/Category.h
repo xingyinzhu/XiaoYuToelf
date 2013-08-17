@@ -12,7 +12,6 @@
 
 @property (nonatomic, assign)NSInteger categoryid;
 @property (nonatomic, copy)NSString * categoryName;
-@property (nonatomic, assign)float progress;
 @property (nonatomic, assign)NSInteger levelNum;
 
 @property (nonatomic, strong)NSArray * categoryDict;
@@ -20,16 +19,7 @@
 
 +(instancetype) categoryWithId:(int)id;
 
-typedef enum
-{
-    hasNotReviewed = -1,
-    hasReviewed = 0
-}CategoryDisplayMode;
+//- (NSComparisonResult) compareProgress: (Category *)other;
 
-- (NSComparisonResult) compareProgress: (Category *)other;
-
-- (void)updateMemCategoryProgressbyWordProgress : (int)totalCurrentProgress withLength : (int)length;
-
-- (BOOL)updateCategoryProgressByOneScore : (int)score withLength : (int)length;
-
+- (CGFloat)calcProgressInCategory;
 @end

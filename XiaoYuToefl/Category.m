@@ -19,7 +19,12 @@
     return c;
 }
 
+- (CGFloat)calcProgressInCategory
+{
+    return [DictHelper calcProgressWithCategoryDict:_categoryid];
+}
 
+/*
 - (NSComparisonResult) compareProgress: (Category *)other
 {
     if (self.progress > other.progress)
@@ -33,41 +38,6 @@
     else
         return (NSComparisonResult)NSOrderedSame;
 }
-
-- (void)updateMemCategoryProgressbyWordProgress : (int)totalCurrentProgress withLength : (int)length
-{
-    //NSLog(@"totalCurrentProgress : %d",totalCurrentProgress);
-    float progress = totalCurrentProgress * 1.0 / (50 * length);
-    if (progress >= 1.0f)
-    {
-        NSLog(@"i am here : %f",progress);
-        self.progress = 1.0f;    //NSLog(@"self.progress : %f",self.progress);
-    }
-    else
-    {
-        self.progress = progress;
-    }
-    /*
-     if (totalCurrentProgress == 120)
-     {
-     NSLog(@"self.progress : %f",self.progress);
-     }
-     */
-}
-
-- (BOOL)updateCategoryProgressByOneScore : (int)score withLength : (int)length
-{
-    if (self.progress >= 1.0 || score == 0)
-    {
-        return NO;
-    }
-    else
-    {
-        float delta = score * 1.0 / (50 * length);
-        self.progress += delta;
-        NSLog(@"in updateCategoryProgressByOneScore : %f",self.progress);
-        return YES;
-    }
-}
+*/
 
 @end

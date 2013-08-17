@@ -50,7 +50,7 @@
 
 #define koffsetTagValue 2013
 
-#define kMarginTop (IS_IPAD ? 30 : 12)
+#define kMarginTop (IS_IPAD ? 10 : 5)
 #define kMarginLeft (IS_IPAD ? 50 : 20)
 
 #define kStopwatchWidth (IS_IPAD ? 300 : 120)
@@ -67,5 +67,9 @@
 
 #define kSecondsLeft 60
 
+#define kProgressBarWidth kCategorySidelength * 3 / 4
+#define kProgressBarColor [UIColor colorWithRed:184.0f/255.0f green:134.0f/255.0f blue:11.0f/255.0f alpha:1.0f]
+
+#define kEveryWordScore 5
 #define configed 1
 #endif
