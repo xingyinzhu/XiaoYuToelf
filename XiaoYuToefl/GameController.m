@@ -419,6 +419,15 @@
     _hud = hud;
     [hud.btnHelp addTarget:self action:@selector(actionHint) forControlEvents:UIControlEventTouchUpInside];
     [hud.btnExit addTarget:self action:@selector(actionExit) forControlEvents:UIControlEventTouchUpInside];
+    [hud.btnSkip addTarget:self action:@selector(actionSkip) forControlEvents:UIControlEventTouchUpInside];
+}
+
+//the user pressed the skip button
+-(void)actionSkip
+{
+    [self stopStopwatch];
+    [self clearBoard];
+    [self startGameByRandomSelect];
 }
 
 //the user pressed the hint button

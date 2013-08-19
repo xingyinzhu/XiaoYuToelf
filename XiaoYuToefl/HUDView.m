@@ -59,6 +59,14 @@
     hud.btnExit.alpha = 0.8;
     [hud addSubview: hud.btnExit];
     
+    hud.btnSkip = [UIButton buttonWithType:UIButtonTypeCustom];
+    [hud.btnSkip setTitle:@"Skip" forState:UIControlStateNormal];
+    hud.btnSkip.titleLabel.font = kFZMWFontGameText;
+    [hud.btnSkip setBackgroundImage:image forState:UIControlStateNormal];
+    hud.btnSkip.frame = CGRectMake(kScreenWidth - kMarginLeft - khintbtnWidth, kScreenHeight - khintbtnHeight - kMarginTop , khintbtnWidth, khintbtnHeight);
+    hud.btnSkip.alpha = 0.8;
+    [hud addSubview: hud.btnSkip];
+    
     //the explaination label
     hud.explaination = [[ExplainationLabelView alloc]init];
     CGFloat explainationWidth = kScreenWidth / 2;

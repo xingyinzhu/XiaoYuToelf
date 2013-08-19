@@ -129,6 +129,11 @@ static NSMutableDictionary *categoryDict;
     }
 }
 
++ (BOOL)DictIsExist:(NSFileManager *)filemanager
+{
+    return [filemanager fileExistsAtPath:dictPath];
+}
+
 + (NSMutableArray*)fetchCategoryWithLevel: (NSInteger)level
 {
     NSLog(@"in fetchCategoryWithLevel");
@@ -153,7 +158,9 @@ static NSMutableDictionary *categoryDict;
 
 + (NSMutableArray*)fetchWordsWithCategoryId: (NSInteger)categoryid
 {
-    NSString * sql = [NSString stringWithFormat:@"select * from attribute where attribute_id = %d",categoryid];
+    //filter the words which reached the goal
+    NSString * sql = [NSString stringWithFormat:
+                      @"select a.word from attribute a, progress p where attribute_id = %d and a.word=p.word and p.value < p.goal",categoryid];
     FMResultSet *result = [dictDataBase executeQuery:sql];
     NSMutableArray * res = [[NSMutableArray alloc]init];
     
@@ -167,32 +174,24 @@ static NSMutableDictionary *categoryDict;
     return res;
 }
 
-+ (BOOL)DictIsExist:(NSFileManager *)filemanager
-{
-    return [filemanager fileExistsAtPath:dictPath];
-}
-
 + (CGFloat)calcProgressWithCategoryDict : (NSInteger)categoryId
 {
     
+    //select  * from progress p  where p.word = ( select word from attribute where attribute_id=1)
     NSInteger totalProgress = 0;
     NSInteger currentProgress = 0;
+
+    NSString * sql = [NSString stringWithFormat:
+                      @"select  sum(p.value) as currentProgress , sum(p.goal) as totalProgress from attribute a, progress p where attribute_id = %d and a.word=p.word",categoryId];
     
-    NSArray * array = [DictHelper fetchWordsWithCategoryId:categoryId];
-    
-    for (Word * word in array)
+    FMResultSet *result = [dictDataBase executeQuery:sql];
+    while ([result next])
     {
-        NSString * wordString = word.word;
-        NSString * sql = [NSString stringWithFormat:@"select * from progress where word = '%@'",wordString];
-        FMResultSet *result = [dictDataBase executeQuery:sql];
-        while ([result next])
-        {
-            currentProgress += [result intForColumn:@"value"];
-            totalProgress += [result intForColumn:@"goal"];
-            break;
-        }
+        currentProgress = [result intForColumn:@"currentProgress"];
+        totalProgress = [result intForColumn:@"totalProgress"];
+        break;
     }
-    //NSLog(@"currentProgress : %d totalProgress: %d",currentProgress,totalProgress);
+    
     return currentProgress * 1.0f / totalProgress;
     
 }

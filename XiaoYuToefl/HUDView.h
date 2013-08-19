@@ -18,6 +18,7 @@
 @property (strong, nonatomic) CounterLabelView* gamePoints;
 @property (strong, nonatomic) UIButton * btnHelp;
 @property (strong, nonatomic) UIButton * btnExit;
+@property (strong, nonatomic) UIButton * btnSkip;
 @property (strong, nonatomic) ExplainationLabelView * explaination;
 @property (strong, nonatomic) UILabel * remainCount;
 
