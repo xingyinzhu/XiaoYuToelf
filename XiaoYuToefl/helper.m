@@ -33,4 +33,20 @@
     return res;
 }
 
++ (NSString *)get_filename:(NSString *)name
+{
+    //return [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0]
+    //        stringByAppendingPathComponent:name];
+    
+    return  [[NSBundle mainBundle]
+             pathForResource:name
+             ofType:nil];
+}
+
++ (BOOL)is_file_exist:(NSString *)name
+{
+    NSFileManager *file_manager = [NSFileManager defaultManager];
+    return [file_manager fileExistsAtPath:[self get_filename:name]];
+}
+
 @end

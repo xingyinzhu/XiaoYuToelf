@@ -12,4 +12,5 @@
 
 + (NSString *)randomWordString:(NSString *)string;
 
++ (BOOL)is_file_exist:(NSString *)name;
 @end

@@ -32,7 +32,6 @@
 - (void)saveScoreWithCategoryDict : (NSArray *)dict
 {
     NSInteger totalCount = [dict count];
-    NSLog(@"totalCount : %d",totalCount);
     for (int i=0;i<totalCount;i++)
     {
         Word * word = dict[i];

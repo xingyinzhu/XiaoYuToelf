@@ -131,7 +131,10 @@
         //preload Audio
         Word * word = self.category.categoryDict[i];
         NSString * wordMP3 = [NSString stringWithFormat:@"%@.mp3",word.word];
-        [mp3Array addObject:wordMP3];
+        if ([helper is_file_exist:wordMP3] == TRUE)
+        {
+            [mp3Array addObject:wordMP3];
+        }
     }
     
     [self.audioController preloadAudioEffects:mp3Array];
@@ -436,7 +439,11 @@
 {
     Word *word = self.category.categoryDict[currentWordIndex];
     NSString * wordMP3 = [NSString stringWithFormat:@"%@.mp3",word.word];
-    [self.audioController playEffect:wordMP3];
+   
+    if ([helper is_file_exist:wordMP3] == TRUE)
+    {
+        [self.audioController playEffect:wordMP3];
+    }
 }
 
 //the user pressed the skip button
