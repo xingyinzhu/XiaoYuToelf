@@ -123,10 +123,18 @@
     
     int totalCount = self.category.categoryDict.count;
     _passed = [[NSMutableArray alloc]initWithCapacity:totalCount];
+    NSMutableArray * mp3Array = [[NSMutableArray alloc]initWithCapacity:totalCount];
     for (int i = 0 ; i < totalCount ; i++)
     {
         _passed[i] = [NSNumber numberWithInteger:nopassed];
+        
+        //preload Audio
+        Word * word = self.category.categoryDict[i];
+        NSString * wordMP3 = [NSString stringWithFormat:@"%@.mp3",word.word];
+        [mp3Array addObject:wordMP3];
     }
+    
+    [self.audioController preloadAudioEffects:mp3Array];
     
     [self startGameByRandomSelect];
     [_hud setHidden:NO];
@@ -420,6 +428,15 @@
     [hud.btnHelp addTarget:self action:@selector(actionHint) forControlEvents:UIControlEventTouchUpInside];
     [hud.btnExit addTarget:self action:@selector(actionExit) forControlEvents:UIControlEventTouchUpInside];
     [hud.btnSkip addTarget:self action:@selector(actionSkip) forControlEvents:UIControlEventTouchUpInside];
+    [hud.btnVolume addTarget:self action:@selector(actionPlay) forControlEvents:UIControlEventTouchUpInside];
+}
+
+//the user pressed the play button
+- (void)actionPlay
+{
+    Word *word = self.category.categoryDict[currentWordIndex];
+    NSString * wordMP3 = [NSString stringWithFormat:@"%@.mp3",word.word];
+    [self.audioController playEffect:wordMP3];
 }
 
 //the user pressed the skip button

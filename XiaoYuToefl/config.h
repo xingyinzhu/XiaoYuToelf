@@ -72,4 +72,6 @@
 
 #define kEveryWordScore 5
 #define configed 1
+
+#define kBtnVolumeSize (IS_IPAD ? 96 : 32 )
 #endif

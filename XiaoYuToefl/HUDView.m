@@ -88,6 +88,11 @@
     hud.remainCount.font = kFZMWFontGameText;
     [hud addSubview: hud.remainCount];
     
+    UIImage* volumeImage = [UIImage imageNamed:@"volume"];
+    hud.btnVolume = [UIButton buttonWithType:UIButtonTypeCustom];
+    [hud.btnVolume setBackgroundImage:volumeImage forState:UIControlStateNormal];
+    hud.btnVolume.frame = CGRectMake(kMarginLeft, (kScreenHeight - kBtnVolumeSize)/ 2, kBtnVolumeSize, kBtnVolumeSize);
+    [hud addSubview: hud.btnVolume];
     return hud;
 }
 

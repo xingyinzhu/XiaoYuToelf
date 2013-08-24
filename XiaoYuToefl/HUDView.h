@@ -21,6 +21,7 @@
 @property (strong, nonatomic) UIButton * btnSkip;
 @property (strong, nonatomic) ExplainationLabelView * explaination;
 @property (strong, nonatomic) UILabel * remainCount;
+@property (strong, nonatomic) UIButton * btnVolume;
 
 +(instancetype)viewWithRect:(CGRect)r;
 
