@@ -118,29 +118,41 @@
 {
     int categoryid = sender.tag - koffsetTagValue;
     _category = [Category categoryWithId:categoryid];
-    [self clearBoard];
-    
     
     int totalCount = self.category.categoryDict.count;
-    _passed = [[NSMutableArray alloc]initWithCapacity:totalCount];
-    NSMutableArray * mp3Array = [[NSMutableArray alloc]initWithCapacity:totalCount];
-    for (int i = 0 ; i < totalCount ; i++)
+    if (totalCount == 0)
     {
-        _passed[i] = [NSNumber numberWithInteger:nopassed];
-        
-        //preload Audio
-        Word * word = self.category.categoryDict[i];
-        NSString * wordMP3 = [NSString stringWithFormat:@"%@.mp3",word.word];
-        if ([helper is_file_exist:wordMP3] == TRUE)
-        {
-            [mp3Array addObject:wordMP3];
-        }
+        UIAlertView * aFinishedAlertView = [[UIAlertView alloc]
+                                            initWithTitle:@"Restart"
+                                            message:@"Finished All. Do you want to Restart?"
+                                            delegate:self
+                                            cancelButtonTitle:@"Cancel"
+                                            otherButtonTitles:@"Restart", nil];
+        [aFinishedAlertView show];
     }
-    
-    [self.audioController preloadAudioEffects:mp3Array];
-    
-    [self startGameByRandomSelect];
-    [_hud setHidden:NO];
+    else
+    {
+        [self clearBoard];
+        _passed = [[NSMutableArray alloc]initWithCapacity:totalCount];
+        NSMutableArray * mp3Array = [[NSMutableArray alloc]initWithCapacity:totalCount];
+        for (int i = 0 ; i < totalCount ; i++)
+        {
+            _passed[i] = [NSNumber numberWithInteger:nopassed];
+            
+            //preload Audio
+            Word * word = self.category.categoryDict[i];
+            NSString * wordMP3 = [NSString stringWithFormat:@"%@.mp3",word.word];
+            if ([helper is_file_exist:wordMP3] == TRUE)
+            {
+                [mp3Array addObject:wordMP3];
+            }
+        }
+        
+        [self.audioController preloadAudioEffects:mp3Array];
+        
+        [self startGameByRandomSelect];
+        [_hud setHidden:NO];
+    }
 }
 
 - (void)startGameByRandomSelect
@@ -507,6 +519,19 @@
     [self stopStopwatch];
     [self.data saveScoreWithCategoryDict:self.category.categoryDict];
     [self dealCategoryWithLevel:_currentLevel];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 0)
+    {
+        //cancel do nothing
+    }
+    else if (buttonIndex == 1)
+    {
+        //[DictHelper restartCategory:alertView.tag];
+        //[self updateCategoryProgressinView];
+    }
 }
 
 @end
